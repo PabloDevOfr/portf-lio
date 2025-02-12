@@ -136,6 +136,7 @@ body {
     }
 
      .apresentacao__links__navegacao {
+        width: 70%;
         font-weight: 200px;
         font-size: 1.2rem;
     }
