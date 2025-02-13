@@ -159,6 +159,10 @@ body {
         width: auto;
     }
 
+    .apresentacao__imagem {
+        width: 80%;
+    }
+
     .apresentacao__links__navegacao {
         width: 70%;
         font-weight: 200px;
