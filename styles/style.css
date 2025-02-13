@@ -113,6 +113,22 @@ body {
     font-family: var(--font-secundaria);
 }
 
+.apresentacao__links__jogo {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    border: 2px solid var(--cor-tercearia);
+    width: 50%;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 21.5px 0;
+    text-decoration: none;
+    color: var(--cor-secundaria);
+    font-family: var(--font-secundaria);
+}
+
 .apresentacao__links__link:hover {
     background-color: var(--cor-hover);
 }
@@ -147,7 +163,7 @@ body {
     }
 
     .apresentacao__conteudo__titulo {
-        font-size: 1.80rem;
+        font-size: 1.28rem;
     }
 
     .apresentacaojogo {
@@ -167,6 +183,13 @@ body {
         width: 70%;
         font-weight: 200px;
         font-size: 1.2rem;
+    }
+
+    .apresentacao__links__jogo {
+        gap: 10px;
+        width: 100%;
+        font-size: 1.2rem;
+        padding: 15.5px 0;
     }
 
 }
