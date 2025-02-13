@@ -146,6 +146,10 @@ body {
         padding: 5%;
     }
 
+    .apresentacao__conteudo__titulo {
+        font-size: 1.80rem;
+    }
+
     .apresentacaojogo {
         flex-direction: column-reverse;
         padding: 5%;
