@@ -74,6 +74,10 @@ body {
     font-family: var(--font-primaria);
 }
 
+.apresentacao__jogo {
+    border-radius: 10px;
+}
+
 .titulo-destaque {
     color: var(--cor-tercearia);
 }
