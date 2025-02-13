@@ -47,6 +47,21 @@ body {
     gap: 82px;
 }
 
+.apresentacaojogo {
+    padding: 4.5% 17%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 82px;
+}
+
+.apresentacaojogo__conteudo {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
 .apresentacao__conteudo {
     width: 50%;
     display: flex;
@@ -123,10 +138,15 @@ body {
 
     .cabecalho__menu{
         justify-content: center;
-        gap: 35px;
+        gap: 30px;
     }
 
     .apresentacao {
+        flex-direction: column-reverse;
+        padding: 5%;
+    }
+
+    .apresentacaojogo {
         flex-direction: column-reverse;
         padding: 5%;
     }
@@ -135,10 +155,10 @@ body {
         width: auto;
     }
 
-     .apresentacao__links__navegacao {
+    .apresentacao__links__navegacao {
         width: 70%;
         font-weight: 200px;
         font-size: 1.2rem;
     }
-    
+
 }
