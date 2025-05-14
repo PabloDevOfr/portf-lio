@@ -1,3 +1,50 @@
+/* Reset Básico para consistência entre navegadores */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit; /* Remove estilos de fonte padrão do navegador */
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1; /* Base para line-height */
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/* Fim do Reset Básico */
+
+
 :root {
     --cor-primaria: #0D0D0D; 
     --cor-secundaria: #F5F5F5;
@@ -11,8 +58,7 @@
     --cor-tag-bg: #2a2a2a;
     --cor-whatsapp: #25D366; 
     --cor-whatsapp-hover: #1DAE54;
-    /* Variáveis para o badge adicionadas aqui para centralizar */
-    --cor-badge-notificacao: #FF3B30; /* Ou um vermelho mais vivo como #F44336 */
+    --cor-badge-notificacao: #FF3B30; 
     --cor-texto-badge: #FFFFFF;
 
     --font-primaria: "Krona One", sans-serif;
@@ -24,18 +70,16 @@
     --altura-cabecalho: 70px;
 }
 
-/* Reset Básico e Estilos Globais */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+/* Estilos Globais e Box Sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box; /* Garante que padding e border não aumentem o tamanho do elemento */
 }
 
 html {
     scroll-behavior: smooth;
-    font-size: 100%;
+    font-size: 100%; /* 1rem = 16px por padrão */
     scroll-padding-top: var(--altura-cabecalho);
 }
 
@@ -43,19 +87,17 @@ body {
     background-color: var(--cor-primaria);
     color: var(--cor-secundaria);
     font-family: var(--font-secundaria);
-    line-height: 1.7;
+    line-height: 1.7; /* Melhor legibilidade para parágrafos */
     overflow-x: hidden;
     position: relative; 
+    -webkit-font-smoothing: antialiased; /* Melhor renderização de fontes no Webkit/Blink */
+    -moz-osx-font-smoothing: grayscale; /* Melhor renderização de fontes no Firefox */
 }
 
 img {
     max-width: 100%;
     height: auto;
-    display: block;
-}
-
-ul {
-    list-style: none;
+    display: block; /* Remove espaço extra abaixo da imagem */
 }
 
 a {
@@ -181,6 +223,9 @@ a:hover {
     text-orientation: mixed;
     white-space: nowrap;
     user-select: none;
+    -webkit-user-select: none; /* Para Safari */
+    -moz-user-select: none; /* Para Firefox */
+    -ms-user-select: none; /* Para IE/Edge */
     opacity: 0;
     animation: fadeInMatrix 1s forwards, fall linear infinite;
 }
@@ -214,7 +259,7 @@ a:hover {
 .cabecalho {
     background-color: rgba(13, 13, 13, 0.85); 
     backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* Prefixo para Safari */
     padding: 0 var(--padding-secao-horizontal);
     height: var(--altura-cabecalho);
     position: fixed;
@@ -440,7 +485,7 @@ a:hover {
 }
 
 
-/* Seção Projetos */
+/* Seção Projetos - COM AJUSTES PARA IMAGEM COMPLETA */
 .projetos__categoria-titulo {
     font-family: var(--font-secundaria);
     font-size: 1.75rem;
@@ -468,7 +513,6 @@ a:hover {
 .projeto-card {
     background-color: var(--cor-fundo-card);
     border-radius: 10px;
-    overflow: hidden;
     display: flex;
     flex-direction: column;
     border: 1px solid var(--cor-borda-sutil);
@@ -477,19 +521,27 @@ a:hover {
 .projeto-card:hover {
      box-shadow: 0 8px 25px rgba(34, 212, 253, 0.15);
 }
+
 .projeto-card__imagem-container {
-    overflow: hidden;
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 16 / 10; 
+    background-color: var(--cor-primaria); 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    border-top-left-radius: 9px; 
+    border-top-right-radius: 9px;
+    /* overflow: hidden; Opcional, se quiser clipar algo que saia */
 }
+
 .projeto-card__imagem {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s ease;
+    width: 100%; 
+    height: 100%; 
+    object-fit: contain; /* MOSTRA IMAGEM INTEIRA */
+    max-width: 100%; 
+    max-height: 100%; 
+    display: block; 
 }
-.projeto-card:hover .projeto-card__imagem {
-    transform: scale(1.05);
-}
+
 .projeto-card__conteudo {
     padding: 25px;
     flex-grow: 1;
@@ -522,6 +574,8 @@ a:hover {
     font-size: 0.8rem;
     font-weight: 600;
 }
+/* FIM DA SEÇÃO PROJETOS */
+
 
 /* Seção Contato Reformulada */
 .contato__introducao {
@@ -634,51 +688,51 @@ a:hover {
     position: fixed;
     bottom: 25px;
     right: 25px;
-    background-color: var(--cor-whatsapp); /* Este cria o círculo verde */
+    background-color: var(--cor-whatsapp); 
     width: 60px; 
     height: 60px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Sombra um pouco mais suave */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); 
     z-index: 999;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    text-decoration: none; /* Importante para links com ícones */
+    text-decoration: none;
     cursor: pointer;
 }
 
 .whatsapp-flutuante:hover {
     background-color: var(--cor-whatsapp-hover);
-    transform: scale(1.08); /* Aumenta um pouco mais no hover */
+    transform: scale(1.08); 
 }
 
-.whatsapp-flutuante__icone {
-    width: 32px;  /* Ajuste para o tamanho desejado do ícone INTERNO */
-    height: 32px; /* Ajuste para o tamanho desejado do ícone INTERNO */
-    fill: white;  /* Cor do ícone do telefone */
-    display: block; /* Para evitar espaços extras abaixo do SVG */
+.whatsapp-flutuante__icone { 
+    width: 32px;  
+    height: 32px; 
+    fill: white;  
+    display: block; 
 }
 
 .whatsapp-flutuante__badge {
     position: absolute;
-    top: 0px;         /* Posição no topo do círculo verde */
-    right: 0px;        /* Posição à direita do círculo verde */
-    transform: translate(30%, -30%); /* Ajusta para o canto superior direito, parcialmente fora */
+    top: 0px;         
+    right: 0px;        
+    transform: translate(30%, -30%); 
     background-color: var(--cor-badge-notificacao);
     color: var(--cor-texto-badge);
     font-family: var(--font-secundaria);
     font-size: 12px;
-    font-weight: 700; /* Mais forte */
+    font-weight: 700; 
     min-width: 22px;   
     height: 22px;
-    padding: 0 5px;    /* Espaçamento horizontal para números como "10" */
+    padding: 0 5px;    
     border-radius: 11px; 
     display: flex;
     align-items: center;
     justify-content: center;
     line-height: 1;
-    border: 2px solid white; /* Borda branca para destacar */
+    border: 2px solid white; 
     box-shadow: 0 1px 3px rgba(0,0,0,0.3);
     z-index: 1; 
 }
@@ -814,17 +868,17 @@ a:hover {
         right: 20px;
     }
     .whatsapp-flutuante__icone {
-        width: 26px; 
-        height: 26px;
+        width: 28px; 
+        height: 28px;
     }
     .whatsapp-flutuante__badge {
         min-width: 20px;
         height: 20px;
         font-size: 11px;
         border-radius: 10px;
-        top: 0px; /* Reajustar para alinhar ao canto do botão menor */
-        right: 0px;/* Reajustar para alinhar ao canto do botão menor */
-        border-width: 1px;
+        transform: translate(25%, -25%); 
+        padding: 0 4px;
+        border-width: 1.5px;
     }
     /* Fim dos ajustes do botão flutuante para telas menores */
     
