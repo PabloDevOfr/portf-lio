@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pablo Freire | Desenvolvedor Front-End & Especialista Digital</title>
+    <meta name="description" content="Portfólio de Pablo Freire, desenvolvedor Front-end, especialista em Google Meu Negócio e criação de artes para Instagram. Contato direto via WhatsApp.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet"> <!-- Fonte para o efeito Matrix -->
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Efeito de fundo Matrix -->
+    <div class="matrix-background" id="matrixBackground"></div>
+
+    <header class="cabecalho">
+        <div class="container cabecalho__container">
+            <a href="#home" class="cabecalho__logo">Pablo Freire</a>
+            <nav class="cabecalho__menu" id="menu-nav">
+                <button class="cabecalho__menu__mobile-btn" id="mobile-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-lista">
+                    <span class="hamburguer"></span>
+                </button>
+                <ul class="cabecalho__menu__lista" id="menu-lista">
+                    <li><a class="cabecalho__menu__link" href="#home">Home</a></li>
+                    <li><a class="cabecalho__menu__link" href="#sobre">Sobre mim</a></li>
+                    <li><a class="cabecalho__menu__link" href="#servicos">Serviços</a></li>
+                    <li><a class="cabecalho__menu__link" href="#projetos">Projetos</a></li>
+                    <li><a class="cabecalho__menu__link" href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- SEÇÃO HERO (HOME) -->
+        <section id="home" class="secao hero">
+            <div class="container hero__container">
+                <div class="hero__conteudo">
+                    <h1 class="hero__titulo">Eleve seu negócio digital a outro nível <strong class="titulo-destaque">com soluções web de qualidade!</strong></h1>
+                    <p class="hero__texto paragrafo">Olá! Sou Pablo Freire, desenvolvedor Front-end e especialista digital. Crio interfaces intuitivas, otimizo sua presença online e desenvolvo artes impactantes. Vamos transformar suas ideias em realidade?</p>
+                    <div class="hero__botoes">
+                        <a href="#contato" class="btn btn--destaque">Fale Comigo no WhatsApp</a>
+                        <a href="#projetos" class="btn">Veja meus Projetos</a>
+                    </div>
+                </div>
+                <div class="hero__imagem">
+                    <img src="imagem/eu.png" alt="Foto de Pablo Freire, Desenvolvedor do Portfolio">
+                </div>
+            </div>
+            <!-- DETALHE EM BRANCO AQUI (Ex: uma linha divisória estilizada, um conjunto de pontos, etc.) -->
+        </section>
+
+        <!-- SEÇÃO SOBRE MIM -->
+        <section id="sobre" class="secao sobre">
+            <div class="container">
+                <h2 class="secao__titulo">Sobre Mim</h2>
+                <div class="sobre__container">
+                    <div class="sobre__imagem-container">
+                        <img class="sobre__imagem-perfil" src="imagem/eu1.jpg" alt="Foto de Pablo Freire">
+                    </div>
+                    <div class="sobre__texto">
+                        <p class="paragrafo">Minha jornada na programação começou por curiosidade. Explorando HTML, CSS e JavaScript, descobri uma paixão por criar interfaces visuais e funcionais. A sensação de transformar código em algo tangível e útil é o que me motiva diariamente.</p>
+                        <p class="paragrafo">Com dedicação, tornei-me um profissional focado em desenvolvimento front-end com código limpo, eficiente e acessível. Priorizo a usabilidade e a performance, buscando sempre aprimorar minhas habilidades para entregar soluções inovadoras e de alta qualidade.</p>
+                        <h3 class="sobre__subtitulo">Minhas Habilidades:</h3>
+                        <ul class="habilidades__lista">
+                            <li>HTML5 Semântico</li>
+                            <li>CSS3 (Flexbox, Grid, Animações)</li>
+                            <li>JavaScript (ES6+)</li>
+                            <li>Design Responsivo</li>
+                            <li>Otimização de Performance</li>
+                            <li>SEO Básico</li>
+                            <li>Git & GitHub</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- DETALHE EM BRANCO AQUI -->
+            </div>
+        </section>
+
+        <!-- SEÇÃO SERVIÇOS -->
+        <section id="servicos" class="secao servicos">
+            <div class="container">
+                <h2 class="secao__titulo">Serviços</h2>
+                <div class="servicos__grid">
+                    <article class="servico-card">
+                        <svg class="servico-card__icone" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7.75 3.5a.75.75 0 00-1.5 0v1.646a3.931 3.931 0 00-1.046.794L4.22 4.954a.75.75 0 00-1.06 1.06l.984.984A3.933 3.933 0 003.5 8.25H2.25a.75.75 0 000 1.5h1.25a3.933 3.933 0 00.656 1.252l-.984.984a.75.75 0 101.06 1.06l.984-.984c.341.22.726.391 1.13.513V15.5a.75.75 0 001.5 0v-1.937A3.931 3.931 0 009.75 12h4.5a3.931 3.931 0 002.487 1.563V15.5a.75.75 0 001.5 0v-1.937c.404-.122.79-.292 1.13-.513l.984.984a.75.75 0 101.06-1.06l-.984-.984A3.933 3.933 0 0020.5 9.75h1.25a.75.75 0 000-1.5h-1.25a3.933 3.933 0 00-.656-1.252l.984-.984a.75.75 0 10-1.06-1.06l-.984.984a3.933 3.933 0 00-1.13-.513V3.5a.75.75 0 00-1.5 0v1.646A3.931 3.931 0 0014.25 6h-4.5A3.931 3.931 0 007.263 5.146H7.75V3.5zM5 8.25a2.433 2.433 0 012.25-2.409V6.75A2.25 2.25 0 007.5 9h-.25v-.75zm11.75.75A2.25 2.25 0 0014.5 6.75v1.591A2.433 2.433 0 0116.75 9v.75h-.25A2.25 2.25 0 0014.5 12h.25V9.75zM9.75 7.5h4.5V6A2.433 2.433 0 0112 5.146 2.433 2.433 0 019.75 6v1.5zm0 3V12A2.433 2.433 0 0112 12.854 2.433 2.433 0 0114.25 12v-1.5h-4.5z"/></svg>
+                        <h3 class="servico-card__titulo">Desenvolvimento Front-End</h3>
+                        <p class="servico-card__descricao paragrafo">Criação de sites e interfaces responsivas, rápidas e modernas com HTML, CSS e JavaScript.</p>
+                    </article>
+                    <article class="servico-card">
+                        <svg class="servico-card__icone" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 6.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2.502 12a9.5 9.5 0 1119 0 9.5 9.5 0 01-19 0z"/><path d="M12 9a.75.75 0 00-.75.75v2.5a.75.75 0 001.5 0v-2.5A.75.75 0 0012 9zm0 5.5a1 1 0 100-2 1 1 0 000 2z"/></svg>
+                        <h3 class="servico-card__titulo">Google Meu Negócio</h3>
+                        <p class="servico-card__descricao paragrafo">Otimização completa do seu perfil para aumentar a visibilidade local e atrair mais clientes.</p>
+                    </article>
+                    <article class="servico-card">
+                         <svg class="servico-card__icone" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4.75 3A1.75 1.75 0 003 4.75v14.5A1.75 1.75 0 004.75 21h14.5A1.75 1.75 0 0021 19.25V4.75A1.75 1.75 0 0019.25 3H4.75zM13.5 8.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zm-3.829 1.757a3.001 3.001 0 005.657 0H18.5V17a.5.5 0 01-.5.5H6a.5.5 0 01-.5-.5v-6.743h3.828v.001L9.67 10.257zM5.932 6.5A.682.682 0 016.613 5.75h10.773a.682.682 0 01.682.75v.01a.682.682 0 01-.682.603L6.614 7.51a.682.682 0 01-.682-1.01V6.5z"/></svg>
+                        <h3 class="servico-card__titulo">Artes para Instagram</h3>
+                        <p class="servico-card__descricao paragrafo">Designs criativos e profissionais para posts e stories que engajam seu público.</p>
+                    </article>
+                </div>
+                <!-- DETALHE EM BRANCO AQUI -->
+            </div>
+        </section>
+
+        <!-- SEÇÃO PROJETOS -->
+        <section id="projetos" class="secao projetos">
+            <div class="container">
+                <h2 class="secao__titulo">Projetos</h2>
+                
+                <h3 class="projetos__categoria-titulo">Clientes</h3>
+                <div class="projetos__grid">
+                    <article class="projeto-card">
+                        <div class="projeto-card__imagem-container">
+                            <img src="imagem/clientes/2.jpeg" alt="Print do site do Cliente XPTO" class="projeto-card__imagem">
+                        </div>
+                        <div class="projeto-card__conteudo">
+                            <h4 class="projeto-card__titulo">Website para Empresa</h4>
+                            <p class="projeto-card__descricao paragrafo">Desenvolvimento de site institucional responsivo, focado em apresentação de serviços e captação de leads.</p>
+                            <div class="projeto-card__tags">
+                                <span class="tag">Front-End</span> <span class="tag">HTML</span> <span class="tag">CSS</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="projeto-card">
+                         <div class="projeto-card__imagem-container">
+                            <img src="imagem/clientes/3.jpeg" alt="Print do GMB do Consultório ABC" class="projeto-card__imagem">
+                        </div>
+                        <div class="projeto-card__conteudo">
+                            <h4 class="projeto-card__titulo">Otimização Perfil - HTML CSS JS</h4>
+                            <p class="projeto-card__descricao paragrafo">Desenvolvimento de uma página personalizada para convites, com otimização para melhor visualização, facilitando a confirmação de presença e aumentando a experiência dos convidados.</p>
+                             <div class="projeto-card__tags">
+                                <span class="tag">Pagina Pessoal</span> <span class="tag">SEO Local</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="projeto-card">
+                        <div class="projeto-card__imagem-container">
+                           <img src="imagem/clientes/1.jpeg" alt="Print do GMB do Consultório ABC" class="projeto-card__imagem">
+                       </div>
+                       <div class="projeto-card__conteudo">
+                           <h4 class="projeto-card__titulo">Website para Empresa</h4>
+                           <p class="projeto-card__descricao paragrafo">Desenvolvimento de site institucional responsivo, focado em apresentação de serviços e captação de leads.</p>
+                            <div class="projeto-card__tags">
+                                <span class="tag">Front-End</span> <span class="tag">HTML</span> <span class="tag">CSS</span>
+                           </div>
+                       </div>
+                   </article>
+                   <article class="projeto-card">
+                    <div class="projeto-card__imagem-container">
+                       <img src="imagem/clientes/4.jpeg" alt="Print do GMB do Consultório ABC" class="projeto-card__imagem">
+                   </div>
+                   <div class="projeto-card__conteudo">
+                       <h4 class="projeto-card__titulo">Otimização GMB - Consultório ABC</h4>
+                       <p class="projeto-card__descricao paragrafo">Configuração e otimização do Google Meu Negócio, resultando em aumento de visibilidade e contatos.</p>
+                        <div class="projeto-card__tags">
+                           <span class="tag">Google Meu Negócio</span> <span class="tag">SEO Local</span>
+                       </div>
+                   </div>
+               </article>
+                </div>
+
+                <h3 class="projetos__categoria-titulo">Pessoais</h3>
+                <div class="projetos__grid">
+                     <article class="projeto-card">
+                        <div class="projeto-card__imagem-container">
+                            <img src="imagem/jogon.jpeg" alt="Jogo Número Secreto" class="projeto-card__imagem">
+                        </div>
+                        <div class="projeto-card__conteudo">
+                            <h4 class="projeto-card__titulo">Jogo do Número Secreto</h4>
+                            <p class="projeto-card__descricao paragrafo">Divertido jogo de adivinhação desenvolvido com HTML, CSS e JavaScript puro.</p>
+                            <div class="projeto-card__tags">
+                                <span class="tag">JavaScript</span> <span class="tag">HTML</span> <span class="tag">CSS</span>
+                            </div>
+                            <a href="https://jogonumero-alpha.vercel.app/" class="btn btn--pequeno" target="_blank" rel="noopener noreferrer">Jogar Agora</a>
+                        </div>
+                    </article>
+                </div>
+                <!-- DETALHE EM BRANCO AQUI -->
+            </div>
+        </section>
+
+        <!-- SEÇÃO CONTATO (REFORMULADA) -->
+        <section id="contato" class="secao contato">
+            <div class="container">
+                <h2 class="secao__titulo">Vamos Conversar?</h2>
+                <p class="contato__introducao paragrafo">Estou à disposição para discutir seu projeto, tirar dúvidas ou simplesmente trocar uma ideia. Escolha a melhor forma de me contatar abaixo:</p>
+                
+                <div class="contato__opcoes">
+                    <a href="https://wa.me/+5517991454011?text=Olá%20Pablo%2C%20vi%20seu%20portfólio%20e%20gostaria%20de%20falar%20sobre%20um%20projeto%20de%20Front-End." target="_blank" rel="noopener noreferrer" class="contato__opcao-wpp">
+                        <svg class="contato__opcao-icone" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.228 13.835c-.308-.154-1.812-.893-2.094-.996-.28-.102-.484-.153-.688.153-.204.307-.79.996-.97 1.2-.18.204-.36.23-.667.076-.308-.154-1.29- .476-2.457-1.512-.908-.81-1.52-1.808-1.7-2.115-.18-.308-.02-.476.132-.629.133-.133.308-.359.462-.539.153-.18.204-.307.307-.512s.05-.384-.026-.538c-.077-.154-.688-1.655-.943-2.277-.256-.621-.512-.512-.688-.512h-.435c-.18 0-.484.076-.738.384-.255.308-.996.97-.996 2.368 0 1.398 1.022 2.75 1.175 2.954.153.204 1.992 3.028 4.832 4.263 2.84 1.233 2.84.822 3.358.77.512-.05 1.812-.74 2.067-1.452.255-.714.255-1.325.18-1.452-.077-.128-.28-.204-.587-.358zM12.052 2.001a9.95 9.95 0 00-7.006 2.916 9.95 9.95 0 00-2.917 7.005c0 2.138.687 4.15 1.924 5.813l-2.075 6.05 6.23-2.023a9.926 9.926 0 005.64 1.83h.004a9.952 9.952 0 007.005-2.917A9.95 9.95 0 0021.97 12c0-5.51-4.463-9.998-9.918-9.999z"/></svg>
+                        <strong>Preciso de um Site / Front-End</strong>
+                        <span>Iniciar conversa sobre desenvolvimento web</span>
+                    </a>
+
+                    <a href="https://wa.me/+5517991454011?text=Olá%20Pablo%2C%20gostaria%20de%20otimizar%20meu%20Google%20Meu%20Negócio." target="_blank" rel="noopener noreferrer" class="contato__opcao-wpp">
+                        <svg class="contato__opcao-icone" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.228 13.835c-.308-.154-1.812-.893-2.094-.996-.28-.102-.484-.153-.688.153-.204.307-.79.996-.97 1.2-.18.204-.36.23-.667.076-.308-.154-1.29- .476-2.457-1.512-.908-.81-1.52-1.808-1.7-2.115-.18-.308-.02-.476.132-.629.133-.133.308-.359.462-.539.153-.18.204-.307.307-.512s.05-.384-.026-.538c-.077-.154-.688-1.655-.943-2.277-.256-.621-.512-.512-.688-.512h-.435c-.18 0-.484.076-.738.384-.255.308-.996.97-.996 2.368 0 1.398 1.022 2.75 1.175 2.954.153.204 1.992 3.028 4.832 4.263 2.84 1.233 2.84.822 3.358.77.512-.05 1.812-.74 2.067-1.452.255-.714.255-1.325.18-1.452-.077-.128-.28-.204-.587-.358zM12.052 2.001a9.95 9.95 0 00-7.006 2.916 9.95 9.95 0 00-2.917 7.005c0 2.138.687 4.15 1.924 5.813l-2.075 6.05 6.23-2.023a9.926 9.926 0 005.64 1.83h.004a9.952 9.952 0 007.005-2.917A9.95 9.95 0 0021.97 12c0-5.51-4.463-9.998-9.918-9.999z"/></svg>
+                        <strong>Otimizar Google Meu Negócio</strong>
+                        <span>Iniciar conversa sobre GMN</span>
+                    </a>
+
+                    <a href="https://wa.me/+5517991454011?text=Olá%20Pablo%2C%20preciso%20de%20artes%20para%20o%20Instagram." target="_blank" rel="noopener noreferrer" class="contato__opcao-wpp">
+                        <svg class="contato__opcao-icone" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.228 13.835c-.308-.154-1.812-.893-2.094-.996-.28-.102-.484-.153-.688.153-.204.307-.79.996-.97 1.2-.18.204-.36.23-.667.076-.308-.154-1.29- .476-2.457-1.512-.908-.81-1.52-1.808-1.7-2.115-.18-.308-.02-.476.132-.629.133-.133.308-.359.462-.539.153-.18.204-.307.307-.512s.05-.384-.026-.538c-.077-.154-.688-1.655-.943-2.277-.256-.621-.512-.512-.688-.512h-.435c-.18 0-.484.076-.738.384-.255.308-.996.97-.996 2.368 0 1.398 1.022 2.75 1.175 2.954.153.204 1.992 3.028 4.832 4.263 2.84 1.233 2.84.822 3.358.77.512-.05 1.812-.74 2.067-1.452.255-.714.255-1.325.18-1.452-.077-.128-.28-.204-.587-.358zM12.052 2.001a9.95 9.95 0 00-7.006 2.916 9.95 9.95 0 00-2.917 7.005c0 2.138.687 4.15 1.924 5.813l-2.075 6.05 6.23-2.023a9.926 9.926 0 005.64 1.83h.004a9.952 9.952 0 007.005-2.917A9.95 9.95 0 0021.97 12c0-5.51-4.463-9.998-9.918-9.999z"/></svg>
+                        <strong>Criar Artes para Instagram</strong>
+                        <span>Iniciar conversa sobre design</span>
+                    </a>
+                </div>
+
+                <div class="contato__outras-redes">
+                    <p class="paragrafo">Ou me encontre em outras redes:</p>
+                     <ul class="contato__lista-redes-alternativas">
+                        <li>
+                            <a href="https://www.linkedin.com/in/pablo-rafael-04981b181/" target="_blank" rel="noopener noreferrer" class="contato__link-social-alt">
+                                <svg class="contato__icone-social-alt" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.47 2.25H3.53C2.838 2.2516 2.2516 2.838 2.25 3.53V20.47C2.2516 21.162 2.838 21.7484 3.53 21.75H20.47C21.162 21.7484 21.7484 21.162 21.75 20.47V3.53C21.7484 2.838 21.162 2.2516 20.47 2.25ZM8.007 18.43H5.104V9.626H8.007V18.43ZM6.556 8.462C5.678 8.462 4.977 7.762 4.977 6.883C4.977 6.005 5.677 5.305 6.556 5.305C7.434 5.305 8.134 6.005 8.134 6.883C8.134 7.762 7.434 8.462 6.556 8.462ZM18.435 18.43H15.532V14.193C15.532 13.205 15.512 11.964 14.234 11.964C12.935 11.964 12.713 12.999 12.713 14.113V18.43H9.809V9.626H12.59V10.859H12.63C12.987 10.184 13.832 9.398 15.225 9.398C18.018 9.398 18.435 11.287 18.435 13.701V18.43Z"/></svg>
+                                LinkedIn
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/PabloDevOfr" target="_blank" rel="noopener noreferrer" class="contato__link-social-alt">
+                                <svg class="contato__icone-social-alt" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                                GitHub
+                            </a>
+                        </li>
+                         <li>
+                            <a href="mailto:pablo.dev.ofr@gmail.com" class="contato__link-social-alt">
+                                <svg class="contato__icone-social-alt" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg>
+                                Email
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                 <!-- DETALHE EM BRANCO AQUI -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <div class="container rodape__container">
+            <p>© <span id="currentYear"></span> Pablo Freire. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Botão Flutuante WhatsApp -->
+    <a href="https://wa.me/+5517991454011?text=Olá%20Pablo%2C%20gostaria%20de%20conversar." target="_blank" rel="noopener noreferrer" class="whatsapp-flutuante" aria-label="Fale comigo no WhatsApp">
+        <svg class="whatsapp-flutuante__icone" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99-.001-3.951-.5-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.149-.173.198-.297.297-.495.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.501-.183-.001-.396-.001-.609-.001-.212 0-.55.075-.825.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487 2.983 1.286 2.983.857 3.511.826.528-.031 1.757-.714 2.006-1.413.248-.699.248-1.289.173-1.413z"/>
+        </svg>
+        <span class="whatsapp-flutuante__badge">1</span>
+    </a>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
