@@ -127,7 +127,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const leftPosition = Math.floor(Math.random() * columns) * fontSize;
             column.style.left = `${leftPosition}px`;
             
-            // Posição inicial aleatória acima da tela
             column.style.top = `-${Math.random() * window.innerHeight * 0.5}px`; 
 
             const currentStreamLength = streamLengthBase + Math.floor(Math.random() * streamLengthVariance);
@@ -137,25 +136,23 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             column.innerHTML = `<span>${textContent.charAt(0)}</span>` + textContent.substring(1);
 
-            // Duração da animação de queda e fade-in
-            const fallDuration = (Math.random() * 5) + 5; // Entre 5s e 10s
-            column.style.animationDuration = `1s, ${fallDuration}s`; // fadeIn, fall
-            column.style.animationDelay = `${Math.random() * 1}s`; // Atraso aleatório para início do fadeIn
+            const fallDuration = (Math.random() * 5) + 5; 
+            column.style.animationDuration = `1s, ${fallDuration}s`; 
+            column.style.animationDelay = `${Math.random() * 1}s`; 
 
             matrixBackground.appendChild(column);
 
             column.addEventListener('animationend', (e) => {
                 if (e.animationName === 'fall') {
-                    column.remove(); // Remove a coluna
-                    createColumn(); // Cria uma nova para manter o fluxo
+                    column.remove(); 
+                    createColumn(); 
                 }
             });
         }
         
-        // Criar colunas iniciais
-        const initialColumnsToCreate = Math.floor(columns / 4); // Um quarto das colunas para começar
+        const initialColumnsToCreate = Math.floor(columns / 4); 
         for (let i = 0; i < initialColumnsToCreate; i++) {
-            setTimeout(createColumn, Math.random() * 2000); // Espalha a criação inicial
+            setTimeout(createColumn, Math.random() * 2000); 
         }
     }
 });
