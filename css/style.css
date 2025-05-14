@@ -1,0 +1,834 @@
+:root {
+    --cor-primaria: #0D0D0D; 
+    --cor-secundaria: #F5F5F5;
+    --cor-tercearia: #22D4FD; 
+    --cor-tercearia-escura: #1AB8D9;
+    --cor-matrix-stream: rgba(34, 212, 253, 0.7); 
+    --cor-matrix-highlight: #FFFFFF; 
+    --cor-fundo-card: #1A1A1A;
+    --cor-borda-sutil: #333333;
+    --cor-texto-paragrafo: #CCCCCC;
+    --cor-tag-bg: #2a2a2a;
+    --cor-whatsapp: #25D366; 
+    --cor-whatsapp-hover: #1DAE54;
+    /* Variáveis para o badge adicionadas aqui para centralizar */
+    --cor-badge-notificacao: #FF3B30; /* Ou um vermelho mais vivo como #F44336 */
+    --cor-texto-badge: #FFFFFF;
+
+    --font-primaria: "Krona One", sans-serif;
+    --font-secundaria: "Montserrat", sans-serif;
+    --font-matrix: "Roboto Mono", monospace;
+
+    --padding-secao-vertical: 80px;
+    --padding-secao-horizontal: 20px;
+    --altura-cabecalho: 70px;
+}
+
+/* Reset Básico e Estilos Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 100%;
+    scroll-padding-top: var(--altura-cabecalho);
+}
+
+body {
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+    font-family: var(--font-secundaria);
+    line-height: 1.7;
+    overflow-x: hidden;
+    position: relative; 
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--cor-tercearia);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--cor-tercearia-escura);
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--padding-secao-horizontal);
+    padding-right: var(--padding-secao-horizontal);
+}
+
+/* Títulos de Seção Genéricos */
+.secao {
+    padding-top: var(--padding-secao-vertical);
+    padding-bottom: var(--padding-secao-vertical);
+    border-bottom: 1px solid var(--cor-borda-sutil);
+    position: relative; 
+    z-index: 1; 
+}
+.secao:last-of-type {
+    border-bottom: none;
+}
+
+.secao__titulo {
+    font-family: var(--font-primaria);
+    font-size: 2.25rem; 
+    color: var(--cor-secundaria);
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+}
+.secao__titulo::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: var(--cor-tercearia);
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+.titulo-destaque {
+    color: var(--cor-tercearia);
+}
+
+.paragrafo {
+    font-size: 1.1rem; 
+    color: var(--cor-texto-paragrafo);
+    margin-bottom: 20px;
+}
+.paragrafo:last-of-type {
+    margin-bottom: 0;
+}
+
+/* Botões */
+.btn {
+    display: inline-block;
+    padding: 14px 28px;
+    font-family: var(--font-secundaria);
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease, border-color 0.3s ease;
+    border: 2px solid var(--cor-tercearia);
+    color: var(--cor-tercearia);
+    background-color: transparent;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background-color: var(--cor-tercearia);
+    color: var(--cor-primaria);
+    transform: translateY(-3px);
+}
+
+.btn--destaque {
+    background-color: var(--cor-tercearia);
+    color: var(--cor-primaria);
+}
+
+.btn--destaque:hover {
+    background-color: var(--cor-tercearia-escura);
+    border-color: var(--cor-tercearia-escura);
+}
+
+.btn--pequeno {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+}
+
+
+/* Efeito de Fundo Matrix */
+.matrix-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; 
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.matrix-column {
+    position: absolute;
+    font-family: var(--font-matrix);
+    font-size: 14px;
+    line-height: 1.2;
+    color: var(--cor-matrix-stream);
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    white-space: nowrap;
+    user-select: none;
+    opacity: 0;
+    animation: fadeInMatrix 1s forwards, fall linear infinite;
+}
+
+.matrix-column span {
+    display: inline-block;
+    animation: highlightChar 0.5s linear infinite alternate;
+}
+.matrix-column span:first-child {
+    color: var(--cor-matrix-highlight);
+    text-shadow: 0 0 8px var(--cor-matrix-highlight);
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(105vh); 
+    }
+}
+@keyframes fadeInMatrix {
+    to {
+        opacity: 0.25; 
+    }
+}
+@keyframes highlightChar {
+    0% { opacity: 1; }
+    100% { opacity: 0.6; }
+}
+
+
+/* Cabeçalho */
+.cabecalho {
+    background-color: rgba(13, 13, 13, 0.85); 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 0 var(--padding-secao-horizontal);
+    height: var(--altura-cabecalho);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; 
+    border-bottom: 1px solid var(--cor-borda-sutil);
+    display: flex;
+    align-items: center;
+}
+
+.cabecalho__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.cabecalho__logo {
+    font-family: var(--font-primaria);
+    font-size: 1.5rem;
+    color: var(--cor-secundaria);
+}
+.cabecalho__logo:hover {
+    color: var(--cor-tercearia);
+}
+
+.cabecalho__menu__lista {
+    display: flex;
+    gap: 25px;
+}
+
+.cabecalho__menu__link {
+    font-family: var(--font-secundaria);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--cor-secundaria);
+    padding: 10px 5px;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.cabecalho__menu__link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: var(--cor-tercearia);
+    transition: width 0.3s ease;
+}
+
+.cabecalho__menu__link:hover::after,
+.cabecalho__menu__link.ativo::after {
+    width: 100%;
+}
+.cabecalho__menu__link:hover,
+.cabecalho__menu__link.ativo {
+    color: var(--cor-tercearia);
+}
+
+.cabecalho__menu__mobile-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+}
+
+.hamburguer {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: var(--cor-secundaria);
+    position: relative;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.hamburguer::before,
+.hamburguer::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--cor-secundaria);
+    transition: transform 0.3s ease-in-out, top 0.3s ease-in-out, bottom 0.3s ease-in-out;
+}
+
+.hamburguer::before { top: -8px; }
+.hamburguer::after { bottom: -8px; }
+
+.cabecalho__menu.aberto .hamburguer { background-color: transparent; }
+.cabecalho__menu.aberto .hamburguer::before { transform: rotate(45deg); top: 0; }
+.cabecalho__menu.aberto .hamburguer::after { transform: rotate(-45deg); bottom: 0; }
+
+
+/* Seção Hero (Home) */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: var(--altura-cabecalho);
+}
+
+.hero__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.hero__conteudo {
+    flex: 1.2;
+    animation: surgirDaEsquerda 0.8s ease-out;
+}
+
+.hero__titulo {
+    font-family: var(--font-primaria);
+    font-size: clamp(2.2rem, 5vw, 3rem);
+    line-height: 1.3;
+    margin-bottom: 25px;
+}
+
+.hero__texto {
+    font-size: 1.15rem;
+    margin-bottom: 35px;
+}
+
+.hero__botoes {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.hero__imagem {
+    flex: 0.8;
+    max-width: 400px;
+    animation: surgirDaDireita 0.8s ease-out;
+}
+.hero__imagem img {
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(34, 212, 253, 0.2);
+}
+
+/* Seção Sobre */
+.sobre__container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.sobre__imagem-container {
+    flex: 0.8;
+    max-width: 380px;
+}
+.sobre__imagem-perfil {
+    border-radius: 50%;
+    border: 5px solid var(--cor-tercearia);
+}
+.sobre__texto {
+    flex: 1.2;
+}
+.sobre__subtitulo {
+    font-family: var(--font-secundaria);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--cor-secundaria);
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+.habilidades__lista {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.habilidades__lista li {
+    background-color: var(--cor-fundo-card);
+    color: var(--cor-texto-paragrafo);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    border: 1px solid var(--cor-borda-sutil);
+}
+
+/* Seção Serviços */
+.servicos__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+.servico-card {
+    background-color: var(--cor-fundo-card);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid var(--cor-borda-sutil);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.servico-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+.servico-card__icone {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 25px auto;
+    color: var(--cor-tercearia); 
+}
+.servico-card__titulo {
+    font-family: var(--font-secundaria);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--cor-secundaria);
+    margin-bottom: 15px;
+}
+
+
+/* Seção Projetos */
+.projetos__categoria-titulo {
+    font-family: var(--font-secundaria);
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--cor-secundaria);
+    margin-top: 50px;
+    margin-bottom: 30px;
+    text-align: center;
+    border-bottom: 2px solid var(--cor-tercearia);
+    padding-bottom: 10px;
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.projetos__categoria-titulo:first-of-type {
+    margin-top: 0;
+}
+
+.projetos__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+.projeto-card {
+    background-color: var(--cor-fundo-card);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--cor-borda-sutil);
+    transition: box-shadow 0.3s ease;
+}
+.projeto-card:hover {
+     box-shadow: 0 8px 25px rgba(34, 212, 253, 0.15);
+}
+.projeto-card__imagem-container {
+    overflow: hidden;
+    aspect-ratio: 16 / 10;
+}
+.projeto-card__imagem {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+.projeto-card:hover .projeto-card__imagem {
+    transform: scale(1.05);
+}
+.projeto-card__conteudo {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+.projeto-card__titulo {
+    font-family: var(--font-secundaria);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--cor-secundaria);
+    margin-bottom: 10px;
+}
+.projeto-card__descricao {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+.projeto-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+.tag {
+    background-color: var(--cor-tag-bg);
+    color: var(--cor-texto-paragrafo);
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* Seção Contato Reformulada */
+.contato__introducao {
+    text-align: center;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    font-size: 1.15rem;
+}
+
+.contato__opcoes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+.contato__opcao-wpp {
+    background-color: var(--cor-fundo-card);
+    border: 2px solid var(--cor-borda-sutil);
+    border-radius: 10px;
+    padding: 25px;
+    text-align: center;
+    color: var(--cor-secundaria);
+    transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contato__opcao-wpp:hover {
+    transform: translateY(-8px);
+    border-color: var(--cor-whatsapp);
+    background-color: rgba(37, 211, 102, 0.05);
+}
+
+.contato__opcao-icone {
+    width: 48px;
+    height: 48px;
+    fill: var(--cor-whatsapp);
+    margin-bottom: 15px;
+}
+
+.contato__opcao-wpp strong {
+    font-size: 1.2rem;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 8px;
+    color: var(--cor-secundaria);
+}
+
+.contato__opcao-wpp span {
+    font-size: 0.9rem;
+    color: var(--cor-texto-paragrafo);
+}
+
+.contato__outras-redes {
+    text-align: center;
+    margin-top: 40px;
+}
+.contato__outras-redes .paragrafo {
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.contato__lista-redes-alternativas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.contato__link-social-alt {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--cor-texto-paragrafo);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+.contato__link-social-alt:hover {
+    color: var(--cor-tercearia);
+}
+.contato__icone-social-alt {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
+
+
+/* Rodapé */
+.rodape {
+    background-color: #0A0A0A;
+    padding: 30px 0;
+    text-align: center;
+    border-top: 1px solid var(--cor-borda-sutil);
+    position: relative;
+    z-index: 1;
+}
+.rodape__container p {
+    color: var(--cor-texto-paragrafo);
+    font-size: 0.9rem;
+}
+
+/* --- INÍCIO DOS ESTILOS DO BOTÃO FLUTUANTE WHATSAPP --- */
+.whatsapp-flutuante {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: var(--cor-whatsapp); /* Este cria o círculo verde */
+    width: 60px; 
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Sombra um pouco mais suave */
+    z-index: 999;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none; /* Importante para links com ícones */
+    cursor: pointer;
+}
+
+.whatsapp-flutuante:hover {
+    background-color: var(--cor-whatsapp-hover);
+    transform: scale(1.08); /* Aumenta um pouco mais no hover */
+}
+
+.whatsapp-flutuante__icone {
+    width: 32px;  /* Ajuste para o tamanho desejado do ícone INTERNO */
+    height: 32px; /* Ajuste para o tamanho desejado do ícone INTERNO */
+    fill: white;  /* Cor do ícone do telefone */
+    display: block; /* Para evitar espaços extras abaixo do SVG */
+}
+
+.whatsapp-flutuante__badge {
+    position: absolute;
+    top: 0px;         /* Posição no topo do círculo verde */
+    right: 0px;        /* Posição à direita do círculo verde */
+    transform: translate(30%, -30%); /* Ajusta para o canto superior direito, parcialmente fora */
+    background-color: var(--cor-badge-notificacao);
+    color: var(--cor-texto-badge);
+    font-family: var(--font-secundaria);
+    font-size: 12px;
+    font-weight: 700; /* Mais forte */
+    min-width: 22px;   
+    height: 22px;
+    padding: 0 5px;    /* Espaçamento horizontal para números como "10" */
+    border-radius: 11px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    border: 2px solid white; /* Borda branca para destacar */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    z-index: 1; 
+}
+/* --- FIM DOS ESTILOS DO BOTÃO FLUTUANTE WHATSAPP --- */
+
+
+/* Animações Sutis */
+@keyframes surgirDaEsquerda {
+    from { opacity: 0; transform: translateX(-30px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+@keyframes surgirDaDireita {
+    from { opacity: 0; transform: translateX(30px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+@keyframes surgirDeBaixo { 
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Aplica animação a elementos das seções quando visíveis (JS fará isso) */
+.secao [data-anime] {
+    opacity: 0;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; 
+}
+.secao [data-anime="left"] { transform: translateX(-30px); }
+.secao [data-anime="right"] { transform: translateX(30px); }
+.secao [data-anime="bottom"] { transform: translateY(30px); }
+
+.secao .animar { 
+    opacity: 1;
+    transform: translate(0,0);
+}
+
+
+/* Media Queries para Responsividade */
+@media (max-width: 992px) {
+    .hero__container, .sobre__container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero__conteudo, .sobre__texto {
+        order: 2;
+    }
+    .hero__imagem, .sobre__imagem-container {
+        order: 1;
+        margin-bottom: 30px;
+        max-width: 350px;
+    }
+    .hero__botoes {
+        justify-content: center;
+    }
+    .sobre__imagem-perfil {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .habilidades__lista {
+        justify-content: center;
+    }
+    .contato__opcoes {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --altura-cabecalho: 60px;
+    }
+    html {
+        font-size: 93.75%;
+    }
+    .secao__titulo {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+
+    .cabecalho__menu__mobile-btn {
+        display: block;
+    }
+    .cabecalho__menu__lista {
+        position: fixed;
+        top: var(--altura-cabecalho);
+        left: 0;
+        width: 100%;
+        height: calc(100vh - var(--altura-cabecalho));
+        background-color: var(--cor-primaria); 
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        overflow-y: auto;
+        padding: 20px 0; 
+    }
+    .cabecalho__menu.aberto .cabecalho__menu__lista {
+        transform: translateX(0);
+    }
+    .cabecalho__menu__link {
+        font-size: 1.2rem;
+    }
+    .hero__titulo {
+        font-size: clamp(1.8rem, 7vw, 2.5rem);
+    }
+    .hero__texto {
+        font-size: 1.05rem;
+    }
+    .servicos__grid, .projetos__grid {
+        grid-template-columns: 1fr;
+    }
+    .matrix-background { 
+        display: none; 
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 87.5%;
+    }
+    .hero__botoes .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .hero__botoes .btn:last-child {
+        margin-bottom: 0;
+    }
+
+    /* Ajustes para o botão flutuante em telas menores */
+    .whatsapp-flutuante {
+        width: 55px;  
+        height: 55px; 
+        bottom: 20px;
+        right: 20px;
+    }
+    .whatsapp-flutuante__icone {
+        width: 26px; 
+        height: 26px;
+    }
+    .whatsapp-flutuante__badge {
+        min-width: 20px;
+        height: 20px;
+        font-size: 11px;
+        border-radius: 10px;
+        top: 0px; /* Reajustar para alinhar ao canto do botão menor */
+        right: 0px;/* Reajustar para alinhar ao canto do botão menor */
+        border-width: 1px;
+    }
+    /* Fim dos ajustes do botão flutuante para telas menores */
+    
+    .contato__opcao-wpp strong { font-size: 1.1rem; }
+    .contato__opcao-wpp span { font-size: 0.85rem; }
+    .projetos__categoria-titulo { font-size: 1.5rem; }
+}
